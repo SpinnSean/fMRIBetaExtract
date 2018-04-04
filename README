@@ -1,0 +1,30 @@
+
+ __  __    _____      _____    __  ______       ___  _____      _____ __      
+/  `/  \|\ |||__) /\ /__`|    |__)|__  | /\    |__ \_/||__) /\ /  `||/  \|\ | 
+\__,\__/| \|||  \/~~\.__/|    |__)|___ |/~~\   |___/ \||  \/~~\\__,||\__/| \| 
+-------------------------------------------------------------------------------                                                                              
+
+
+What you will find in this directory. 
+-------------------------------------
+
+error_logs: Errors from the ExtractBetaV2 run (only missing file errors, for now).
+
+extracted_betas: The text files containing the betas, as well as matlab structures.
+
+Faces_task_contrasts: The Faces task data.
+
+masks: The masks used (originals, and resampled).
+
+Mid_task_contrasts: The Mid task data.
+
+R_Workspaces: The Rdata objects (saved workspaces). 
+
+scripts: The Matlab and R scripts used. 
+
+spm_1_participant: Example of one participant, used as a template for resampling 
+		   (Note: The con_0001_angry was the reference slice).
+
+Stop_task_contrasts: The Stop task data. 
+
+Note: Haven't figured out why there is an extra X column filled with NaNs at the end of the dataframes.
