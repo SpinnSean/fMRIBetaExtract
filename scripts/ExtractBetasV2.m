@@ -8,12 +8,12 @@ function condata=ExtractBetasV2(taspath, conpath, roipath, usercons, task)
 % usercons = name of contrast files which are actually used (i.e. con_0001, con_0002)
 %            must be in a cell: {'con_0001', 'con_0002'}
 % task = name of task
+% ( Uncomment progressbar lines for progress GUI ) 
 % SEE EXAMPLE OF INPUT IN extractbetabatch.mat object 
 
-% Left to do (1/04/2018): 
-% Last error: line 31, 'Too many inputs for colon operator.' [parts.N]
 
 % Sean Spinney
+
 addpath('/usr/local/MATLAB/R2013a_Student/toolbox')
 
 % Paths to participants data
@@ -65,6 +65,7 @@ mask.data = spm_read_vols(spm_vol(mask.path));
 % Sanity check: sizes of mask and contrast should be equal. Probably would fail even without check.
 contrast.dim = size(contrast.data);
 mask.dim = size(mask.data);
+
 if contrast.dim ~= mask.dim
     sprintf('There was a problem creating the mask %s', mask.path)
 end
@@ -73,7 +74,7 @@ end
 mask.ind = find(mask.data);
 
 % Revised Version
-avgconbeta = mean(contrast.data(mask.ind));
+avgconbeta = mean(contrast.data(mask.ind)); % Takes average over ROI
 
 condata(c).task = task;
 condata(c).name = conkeep{c}(1:end-4);
@@ -81,9 +82,7 @@ condata(c).roi(r).name = rois(r).name(3:end-4);
 condata(c).roi(r).part(n).name = parts(n).name;
 condata(c).roi(r).part(n).beta = avgconbeta;
 
-%df{n,r,c} = avgconbeta;
-
-
+% Write any errors to a log file
 catch ME
 sprintf('Failed -> Part: %s Contrast: %s Roi: %s \n Message: %s', parts(n).name, conkeep{c}, rois(r).name, ME.message)
 fid=fopen('/data/IMAGEN/Functional/error_logs/error.log', 'a+');
