@@ -4,6 +4,8 @@
 \__,\__/| \|||  \/~~\.__/|    |__)|___ |/~~\   |___/ \||  \/~~\\__,||\__/| \| 
 -------------------------------------------------------------------------------                                                                              
 
+Takes SPM nifti contrast files and extracts the beta weights using ROI masks. 
+he masks were previously resampled using Coregistration (reslicing) in SPM. 
 
 What you will find in this directory. 
 -------------------------------------
@@ -26,5 +28,3 @@ spm_1_participant: Example of one participant, used as a template for resampling
 		   (Note: The con_0001_angry was the reference slice).
 
 Stop_task_contrasts: The Stop task data. 
-
-Note: Haven't figured out why there is an extra X column filled with NaNs at the end of the dataframes.
