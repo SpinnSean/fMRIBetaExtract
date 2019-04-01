@@ -1,13 +1,10 @@
 
- __  __    _____      _____    __  ______       ___  _____      _____ __      
-/  `/  \|\ |||__) /\ /__`|    |__)|__  | /\    |__ \_/||__) /\ /  `||/  \|\ | 
-\__,\__/| \|||  \/~~\.__/|    |__)|___ |/~~\   |___/ \||  \/~~\\__,||\__/| \| 
--------------------------------------------------------------------------------                                                                              
+# Beta contrast extraction                                                                           
 
 Takes SPM nifti contrast files and extracts the beta weights using ROI masks. 
 he masks were previously resampled using Coregistration (reslicing) in SPM. 
 
-What you will find in this directory. 
+### What you will find in this directory. 
 -------------------------------------
 
 error_logs: Errors from the ExtractBetaV2 run (only missing file errors, for now).
